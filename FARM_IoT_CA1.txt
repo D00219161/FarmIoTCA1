@@ -1,0 +1,7 @@
+IoT CA1 FARM 
+•	Design Doc – Group (20 Marks)
+•	Version Control - Group (20 Marks)
+•	Hardware – Matthew & Finbar (20 Marks)
+•	Data, Data Storage & Processing – Roisin (20 Marks)
+•	Security – Finbar (10 Marks)
+•	UI, User & Testing – Aisling (20 Marks)
