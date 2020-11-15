@@ -139,3 +139,11 @@ A functional requirement for the secondary user was to be able to view the avera
 
 
 Fig.9 Secondary User (James) Average Electricity Usage Page.
+Testing:
+Use Case Development:
+Before the system is developed, we create use cases. Use case development shows how different people can interact with the system, the behaviours of the system and basic flow of what the system should do. 
+Homesafe has a primary user (Oliver) and a secondary user (James) of the system. A primary user initiates the use of a system whereas the secondary user acts as a reactionary to how the primary user interacts with the system. Figure 10 below shows how the primary and secondary user interacts with Homesafe.
+ 
+Fig.10 Use Case Development Homesafe
+ 
+Another type of testing we are using to test Homesafe is functional testing. Functional testing helps identify what functions the software is supposed to do by identifying the functional requirements of the system then testing the system accordingly. This is done through testing data input and entry, the execution of the test code and analysing the results of the tests. When testing Homesafe we are also going to use integration testing. This will ensure all interactions between the web server we are using which is Aws and the application server interface we are creating which is a Homesafe website, are running smoothly. When we are creating the Homesafe website we are expecting our users to run it on different devices such as a laptop, mobile phone and tablet, therefore we are going to use applications testing as well. We are going to use black box testing and white box testing methods to achieve this. 
