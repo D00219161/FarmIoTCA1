@@ -17,6 +17,20 @@ Aisling branch test
 
 Roisin New branch test - Updated location
 
+
+<<<<<<< matthew >>>>>>>
+Hardware
+
+1.	Hardware
+The following hardware parts are required to read data from the electricity live wire:
+	X1 Raspberry Pi Zero
+	X1 Gravity Analog AC Current Sensor (with Analog Board Module)
+	X1 ADS1115 Analog to Digital converter (16bit 4-Channel)
+	X7 Male-to-Female jumper wires
+
+Detailed analysis below of the hardware used within the IoT Application explains how the hardware will be setup and how they will communicate to the Pi. The AC Current Sensor (with Analog Board Module) and ADS1115 Converter have already been ordered however with the current situation of COVID delivering goods has been a major issue. I have used Fritzing to digitally connect the hardware up with the Pi as per Figure 0.1. Matthew’s Pi which will be connected to the Mongo Database, will have the listed hardware reading the current usage before sending the log of data usage readiungs to the database. Thus, making the data recorded from Matthew’s hardware accessible to any of the team members despite him only having the hardware within the group.
+
+
 <<<<<<< aisling
 UI, Users and Testing
 
