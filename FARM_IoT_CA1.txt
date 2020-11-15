@@ -229,3 +229,15 @@ We will have different API’s for both the electricity and temperature usage. T
 •	Getting the average electricity.
 •	Getting the electricity usage back.
 Figure 0.7 Postman API's 
+
+Data Processing
+In order to process the data collected by the temperature sensor and the electricity sensor, we will need to use cron jobs in our Iot Application. We will be using python scripts to gather our data readings for electricity and temperature.
+As we will be collecting the temperature readings every hour each day and night, we will need one cron jobs in our sensors.py file. We may need a second cron job to make sure the date increments and the day changes. This is to ensure the data being recorded doesn’t override the pervious data. 
+The example of the cron jobs used for the Temperature Readings include:
+•	Every Hour on The Hour is: 0 * * * *
+
+As we will be collecting the electricity readings every 15 minutes each day and night, we will need one cron jobs in our sensors.py file. We may need a second cron job to make sure the date increments and the day changes. This is to ensure the data being recorded doesn’t override the pervious data. As the electricity is being recorded every 15 minutes, we need to make sure that the data is also converted form amps to kw’s before the time is up.
+The example of the cron jobs used for the Electricity Readings include:
+•	Every 15 Minutes is:  */15 * * * *
+References
+The PiHut. (2020) DHT11 basic temperature-humidity sensor + extras [Online]. Available form: https://thepihut.com/products/dht11-basic-temperature-humidity-sensor-extras [accessed 15/11/2020].
