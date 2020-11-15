@@ -45,6 +45,29 @@ The analog board can communicate with the Raspberry Pi with the GND, power input
 ADS1115 Analog to Digital Converter
 The analog board will then be connected to the ADS1115 converter using the GND, power input and signal output connections. This hardware can detect the current electricity usage, complete calculations required and send the data to the database.
 
+>>>>>> finbar
+
+DHT11 Sensor
+The DHT11 is a basic, ultra-low-cost digital temperature and humidity sensor. Which can deliver data every 2 seconds.
+
+ESP8266-DEVKITC-02D-F
+This is a development board for the ESP8266, which is a low-cost Wi-Fi microchip, with a full TCP/IP stack and microcontroller capability, produced by Espressif Systems.
+This will be used to send the sensor data wirelessly from whichever room its located.
+
+5V Micro USB Power supply
+This can be an old phone charger or bought new. It will be used to power the ESP8266 Dev board.
+
+Small Breadboard
+This will be used to connect the DHT11 sensor and ESP8266 Dev board easily.
+
+Security
+•	The ESP8266 Dev Boards programming switch will be turned off to prevent unwanted wireless access.
+•	The Pi Zero will have SSH enabled although a password will be required to access it.
+•	Power and temperature data will be encrypted at rest using Mongo Atlas.
+•	User credentials will also be encrypted with SHA256 before being entered into the database, and password hashing will be implemented.
+•	If a user fails to enter the correct password or email three times in a row, the account will be locked for five minutes.
+•	There will be an account recovery option for users who forget their credentials.
+•	Two factor authentication will be implemented if time is available to do so, although it’s not necessary.
 
 <<<<<<< aisling
 UI, Users and Testing
