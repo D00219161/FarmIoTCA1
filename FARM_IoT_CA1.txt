@@ -16,3 +16,97 @@ Matthew branch test
 Aisling branch test
 
 Roisin New branch test - Updated location
+
+<<<<<<< aisling
+UI, Users and Testing
+
+Homesafe is a UI that helps people such as our primary user, Oliver the farmer. It will be used to help manage their finances through tracking their electricity usage and the temperature of their house on our website. 
+What data is available to the user? 
+When the user has logged into Homesafe there are two versions of the website. The version you have access to depends on the level of access granted for that specific user. For example, Oliver the farmer has full access to the system as the sensor is in his house tracking his electricity and temperature usage. Full access to the system enables Oliver to input data such as his target bill. When using the system Oliver will be able to view: 
+•	The average temperature of his house.
+•	The temperature of every room in his house. 
+•	The total costs so far today.
+•	Graphs that show his average daily usage of electricity.
+
+A secondary user on the system will be Oliver’s son James. James does not have full access to the system, he has a limited view of the data that is produced from Oliver’s use of the system. For example, James will only be able to view the average temperature of Oliver’s house and a graph of the average electricity usage throughout Oliver’s house. James will also receive notifications when his father (Oliver) goes over the average daily usage he has set. 
+Functionality and interrogation of data in Homesafe
+The functionality and interrogation of data in the primary users view of Homesafe.
+As stated previously, Oliver is the primary user of the Homesafe system and has full access. 
+ 
+Fig.1 Homesafe Create Account Page.
+In figure 1 above we can see the create an account page. This is a functional requirement of the system as it allows users to create an account to log in to view their data and begin tracking their electricity and temperature usage. The data the user must input in this section is shown above in figure 1. We have decided to use placeholders in this section to make it easier for users such as Oliver or his son James to understand what type of data the system is asking/hinting for them to input.
+Fig.2 Homesafe Login Page.
+Figure 2 shows the login page that prompts users to enter a username and password. This is essential to the system as there are different levels of accessibility in regard to viewing the primary users data. 
+
+
+
+
+
+
+
+
+
+
+
+
+Fig.3 Primary user (Oliver’s) dashboard. 
+In figure 3 above is the primary user’s dashboard. This is what the primary user sees when they first log into the system. From the dashboard the user is able to see they are on target with their target bill, this is shown by the use of an emoji. The functionality of the emoji is so the user is able to see at a glance they are on target, as our primary user (Oliver) is 80 years old and has a poor technical knowledge we wanted the information on the system to be minimal and easy to understand. 
+
+
+
+
+
+
+
+
+
+
+
+
+Fig.4 Primary user (Oliver) Electricity Usage.
+In figure 4 we can see the electricity usage page this part of the website does not require any data to be entered by the user. The purpose of this page is to display the average electricity usage in the primary user (Oliver’s) house and show him that he is on target, as previously stated Oliver has a poor technical background and the emoji shows that he is on target as it is a smiling face. If the emoji was an angry face it means that Oliver is over his target bill. 
+
+Fig.5 Primary User (Oliver) Temperature Analysis.
+As information provided in the primary users view of the system is to be kept minimal the temperature analysis page shows the temperature in each room of the primary user’s house and what temperature it is as shown above in figure 5. Depending on how hot or cold the room is, the bubbles that display the temperature will be either blue for cold, light red for an average temperature and red for hot. This makes it easy for users such as Oliver to interpret the temperature analysis of each room and the average temperature of his house. The data needed for this analysis will have been set in the user’s settings page. 
+Fig.6 Primary User (Oliver) Running Bill.
+The target set can be edited by the user and they can input a different target for each day. The electricity usage is also shown in figure 6 in a bar chart displaying the electricity usage for each day of the week, the primary user is then able to view their electricity usage for previous weeks and compare the usage between the weeks that were tracked. 
+The functionality and interrogation of data in the secondary users view of Homesafe.
+The secondary user (James Oliver’s son) has a limited view of the system and is unable to input any data in regards to electricity usage and temperature, he can input data when he is creating an account on the Create Account Page shown in figure 1 and logging into the system which is shown the in Homesafe Login Page in figure 2. 
+
+
+
+
+
+
+
+
+
+
+
+Fig.7 Secondary User (James) Notification Page.
+The purpose of having a secondary user on the Homesafe system was for James to be able to receive notifications of when Oliver was exceeding his average usage due to living far away from his father and dur to worrying about his father keeping warm and not putting himself in danger due to being recently widowed. In figure 7 we can see the notification which states, “Oliver has gone over budget by £10.00. Average usage exceeds by 30 units”. This is an example of how the secondary user would be notified of the primary user’s status on the system.
+
+
+
+
+
+
+
+
+
+
+
+Fig.8 Secondary Users (James) Average Temperature Page.
+A functional requirement for the secondary user was to be able to view the average temperature and the average electricity usage of the primary user. Due to data protection, the secondary user cannot have the same level of access to the system as the primary user. The restrictions in access for the secondary user are shown in figure 8 and figure 9.
+ 
+
+
+
+
+
+
+
+
+
+
+Fig.9 Secondary User (James) Average Electricity Usage Page.
