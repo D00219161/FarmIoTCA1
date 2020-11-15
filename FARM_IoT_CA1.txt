@@ -33,12 +33,17 @@ Detailed analysis below of the hardware used within the IoT Application explains
  
 Figure 0.1 Electricity Sensor Hardware Setup
 
-Rasbpberry Pi Zero
+Raspberry Pi Zero
 The hardware environment setup for the IoT Application involved a micro-controller, which is the Raspberry Pi Zero powered by mains electricity. The micro-controller is connected to WiFi – being an easier way to connect to the internet rather than running cables of ethernet to the device.
 
 AC Current Sensor
-As our IoT Application will be measuring electricity usage within the home, additional hardware was sourced and ordered such as an Analog AC Current sensor which features a non-invasive “wrap-on” tie to eliminate cutting into the mains wiring. This sensor had a 3.5mm jack socket that was plugged into the analog module. The analog board can communicate with the Raspberry Pi with the GND, power input and signal output connections (these will be used with the male to female wires). 
+As our IoT Application will be measuring electricity usage within the home, additional hardware has been sourced and ordered such as the Analog AC Current sensor which features a non-invasive “wrap-on” tie to eliminate cutting into the mains wiring. This sensor had a 3.5mm jack socket that was plugged into the analog module.
 
+Analog Board Module
+The analog board can communicate with the Raspberry Pi with the GND, power input and signal output connections (these will be used with the male to female wires). It wouldn’t be possible to connect the analog board directly to the Raspberry Pi as it only allows digital input from hardware peripherals, so an ADS1115 converter will be required to convert the analog signals coming from the electricity sensor into digital signals that the Pi would be able to recognise.
+
+ADS1115 Analog to Digital Converter
+The analog board will then be connected to the ADS1115 converter using the GND, power input and signal output connections. This hardware can detect the current electricity usage, complete calculations required and send the data to the database.
 
 
 <<<<<<< aisling
