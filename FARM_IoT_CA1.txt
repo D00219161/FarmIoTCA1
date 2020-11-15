@@ -179,3 +179,53 @@ Once the electricity data has been recorded and converted to kw, it will be stor
 The data recorded by the electricity sensor connected to the raspberry pi will be gathered using cron job commands in our sensors.py file that will be located on the pi itself. This will show how the data collected will be processed and how often the data will be collected. In our case this will be every 15 minutes. 
 
 We will be using PuTTY to write to the raspberry pi’s to configure the cron jobs in the sensors.py files. This way once the jobs have been written and tested, they will continue to work once we discontent from PuTTY.
+
+Data Storage
+In relation to the data storage we have opted to use a MongoDB database to store our data collected by the sensors and to then produce the data back out onto a screen display. It will be hosted in the cloud using MongoDB Atlas.
+
+MongoDB
+Aisling created a MongoDB Atlas cloud account to create the database. Once she had that created, she then hosted a cluster on AWS and allowed each team member to create a username and password to then login to that database on our local machines using MongoDBCompass. Below is the URL link each team member needed to connect to the database cluster. Each team member changed the Username and Password to their specific credentials. 
+ mongodb+srv://<username>:<password>@cluster0.b528o.mongodb.net/test
+
+MongoDB is a schemaless database. This type of a database will not have fixed data structures and uses JSON to store data in their collections. The reason we have decided to use a MongoDB is that the data entering the database and tables will be unstructured and easier to manipulate with JSON.
+
+When connected to the database in MongoDBCompass you can see that the database we are using is called home_safe. Within this database there is three collections created. These act like tables within our database. 
+The three collections are called electricity_usage, temp_usage and users. We only require three database collections as our IoT Application is only collecting and storing data in relation to the electricity, temperature, and users. 
+Figure 0.3 MongoDB database 
+
+Below in Figure 0.4 we can see the database collections that are going to be used. The collections also give back very important information in relation to the size or each one. As our data grows over time the size of each collection will increase. The electricity_usage and temp_usage will increase the most as the electricity_usage data is being collected every 15 minutes and the temp_usage data is being collected every hour. The electricity_usage collection will also increase due to multiple appliances being recorded of the mains within a house.
+Figure 0.4 MongoDB collections
+
+The electricity usage data collected by the Gravity Analog AC Current sensor will be stored in the electricity_usage collection as seen in Figure 0.5. Matthew’s Pi will be connected to the electricity hardware to collect the electricity data. Matthew’s Pi will also be connected to the mongo database which will send a log of the data to the electricity_usage collection. The data collected will be stored in the following format:
+•	_id: This will be randomly created for each new piece of data collected and stored.
+•	day: This will hold a record of the electricity used within each day (12-hour period).
+•	night: This will hold a record of the electricity used within each night (12-hour period).
+•	dayOfWeek: This will record what day the electricity data is being recorded i.e. Wednesday.
+•	date: This will hold the current date in which the data is being recorded i.e. 15/11/2020. It will be in the format of dd/mm/yy.
+•	rural: This will calculate the electricity data cost for the user if they are located in a rural area. This will be calculated by the day and night recordings. 
+•	urban: This will calculate the electricity data cost for the user if they are located in an urban area. This will be calculated by the day and night recordings. 
+•	hourlyUsage: This will hold the readings for every hour and add up the amount of electricity used within each hour.
+•	checkedEvery15Minutes: As the electricity data is going to be recorded every 15 minutes, it will be displayed back here. This will have a more in depth recording of the electricity data over the day and night periods also.
+With the electricity data being collected this way, it will make it easier to work out the cost per day and night and by region. It will also make displaying the average electricity data back to the user easier. The electricity data collected will also be recorded in KWH after being converted from AMPS.
+Figure 0.5 MongoDB electricity_usage
+
+As we will be using two different temperature sensors to collect the readings, both will be storing the data collected into the temp_usage collection as seen in Figure 0.5. As each member of the team will have one of each sensor, we all will be recording the temperature data. Both temperature sensors will be connected to our induvial Raspberry Pi’s. The Pi’s will then be connected to the mongo database which will send a log of the data to the temp_usage collection.
+The data collected will be stored in the following format:
+•	_id: This will be randomly created for each new piece of data collected and stored.
+•	day: This will hold a record of the temperatures through-out the day (12-hour period).
+•	night: This will hold a record of the temperatures through-out the night (12-hour period).
+•	dayOfWeek: This will record what day the temperature is being recorded i.e. Tuesday.
+•	date: This will hold the current date in which the data is being recorded i.e. 15/11/2020. It will be in the format of dd/mm/yy.
+•	room: This will hold the temperature of rooms within the household, which will also the average temperature of the house to be recorded.
+•	averageTemp: This will hold the calculate of average temperature within the house by room, day, and night.
+•	hourlyUsage: This will hold the readings of the temperature each hour and add up the average temperature each day and night.
+•	checkedHourly: As the temperature is going to be recorded each hour, it will be displayed back here in more depth to see which rooms had a higher temperature than others. 
+Figure 0.6 MongoDB temp_usage
+
+The data in the database will be queried each day to produce the average readings of the temperature and to display back how much units of electricity is being used. 
+In order to query the data within the mongoDB, we will need to use Postman to create API’s that connect to the server in which the data is being held on. In our case this would be the MongoDB Atlas cloud cluster on AWS. The website front end will be displayed on an AWS server and will be connected to the pi using PubNub. See Figure 0.7.
+We will have different API’s for both the electricity and temperature usage. The main queries are:
+•	Getting the average temperature.
+•	Getting the average electricity.
+•	Getting the electricity usage back.
+Figure 0.7 Postman API's 
