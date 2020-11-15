@@ -147,3 +147,35 @@ Homesafe has a primary user (Oliver) and a secondary user (James) of the system.
 Fig.10 Use Case Development Homesafe
  
 Another type of testing we are using to test Homesafe is functional testing. Functional testing helps identify what functions the software is supposed to do by identifying the functional requirements of the system then testing the system accordingly. This is done through testing data input and entry, the execution of the test code and analysing the results of the tests. When testing Homesafe we are also going to use integration testing. This will ensure all interactions between the web server we are using which is Aws and the application server interface we are creating which is a Homesafe website, are running smoothly. When we are creating the Homesafe website we are expecting our users to run it on different devices such as a laptop, mobile phone and tablet, therefore we are going to use applications testing as well. We are going to use black box testing and white box testing methods to achieve this. 
+
+
+
+<<<<<<<< Roisin >>>>>>>>
+Data, Data Storage and Data Processing
+This is looking at what data we will be collecting for our IoT Application, how that data will be stored and then how that data will be processed and displayed.
+The sensors we are using to collect the data include a Temperature Sensors and an Electricity Sensor as referenced in the Hardware section. As we will only be collecting data related to the temperature of the house and data related to the Electricity of the house, it is important that we use good sensors to achieve this.
+
+Data
+In relation to our IoT Application we are going to be collecting the temperature data in Degrees Celsius and the electricity data in AMPS and convert to KW. 
+
+Temperature Sensor
+We will be using two temperature sensors to record the temperature of the house and rooms. The two temperature sensors we are going to be using include the following:
+•	DHT11 basic temperature-humidity sensor.
+•	ESP8266-DEVKITC-02D-F temperature sensor.
+The DHT11 temperature sensor is a basic temperature sensor that we will be using to help collect the temperature readings of rooms. In order for this sensor to work it will be connected to the breadboard, which will then be connected to the raspberry pi to provide it power. Male to Male and Male to Female jumpier wires will also be needed to connect everything together. The raspberry pi will contain a sensors.py file that will run a line of code to collect the temperature every 2 minutes for this sensor, as it records the temperature every 2 minutes. 
+The data recorded by this basic temperature sensor will be gathered using cron job commands in our sensors.py file that will be located on the pi itself. This will show how the data collected will be processed and how often the data will be collected. In our case this will be every 2 minutes for this sensor. 
+The temperature data recorded will be stored in the temp_usage collection in the mongoDB every hour.
+Figure 0.1 DHT11 Temperature Sensor (The PiHut 2020).
+
+The ESP8266-DEVKITC-02D-F temperature sensor is a more updated sensor. This sensor will be connected to the raspberry pi over Wi-Fi. It will need a power source and it contains a temperature reading prob which connects to the base of the sensor. It will collect the temperature readings by being placed on a wall connected to a power source. It will send the data back over to the raspberry pi via Wi-Fi.
+The data recorded by this temperature sensor will be gathered using cron job commands in our sensors.py file that will be located on the pi itself. This will show how the data collected will be processed and how often the data will be collected. The temperature will be recorded every hour with this sensor compared to the basic sensor. 
+The temperature data recorded will be stored in the temp_usage collection in the mongoDB every hour.
+
+Electricity Sensor
+The electricity sensor that we are going to be using is:
+•	Gravity Analog AC Current Sensor (with Analog Board Module) and an Analog to Digital converter (16bit 4-Channel).
+The electricity sensor that we are using will be able to connect to the mains within a household by rapping itself around the main wire. The Analog board will need to be connected to an Analog to Digital converter in order for the Raspberry Pi to pick up on the data being recorded. The sensor will be recording the electricity in amps. The sensor is an 20amps sensor. As we will be using units per kw to display the electricity back out to the user, we will need to convert the amps recorded to kw to display the total units used. In order to convert the amps recorded to kw, we will use Ohm’s Law to do this calculation. 
+Once the electricity data has been recorded and converted to kw, it will be stored in the electricity_usage collection in the mongoDB.
+The data recorded by the electricity sensor connected to the raspberry pi will be gathered using cron job commands in our sensors.py file that will be located on the pi itself. This will show how the data collected will be processed and how often the data will be collected. In our case this will be every 15 minutes. 
+
+We will be using PuTTY to write to the raspberry pi’s to configure the cron jobs in the sensors.py files. This way once the jobs have been written and tested, they will continue to work once we discontent from PuTTY.
