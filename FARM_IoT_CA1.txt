@@ -106,3 +106,8 @@ A functional requirement for the secondary user was to be able to view the avera
 
 
 Fig.9 Secondary User (James) Average Electricity Usage Page.
+
+Testing:
+Use Case Development:
+Before the system is developed, we create use cases. Use case development shows how different people can interact with the system, the behaviours of the system and basic flow of what the system should do. 
+Homesafe has a primary user (Oliver) and a secondary user (James) of the system. A primary user initiates the use of a system where as the secondary user acts as a reactionary to how the primary user interacts with the system. 
