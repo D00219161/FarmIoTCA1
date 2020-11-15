@@ -30,6 +30,16 @@ The following hardware parts are required to read data from the electricity live
 
 Detailed analysis below of the hardware used within the IoT Application explains how the hardware will be setup and how they will communicate to the Pi. The AC Current Sensor (with Analog Board Module) and ADS1115 Converter have already been ordered however with the current situation of COVID delivering goods has been a major issue. I have used Fritzing to digitally connect the hardware up with the Pi as per Figure 0.1. Matthew’s Pi which will be connected to the Mongo Database, will have the listed hardware reading the current usage before sending the log of data usage readiungs to the database. Thus, making the data recorded from Matthew’s hardware accessible to any of the team members despite him only having the hardware within the group.
 
+ 
+Figure 0.1 Electricity Sensor Hardware Setup
+
+Rasbpberry Pi Zero
+The hardware environment setup for the IoT Application involved a micro-controller, which is the Raspberry Pi Zero powered by mains electricity. The micro-controller is connected to WiFi – being an easier way to connect to the internet rather than running cables of ethernet to the device.
+
+AC Current Sensor
+As our IoT Application will be measuring electricity usage within the home, additional hardware was sourced and ordered such as an Analog AC Current sensor which features a non-invasive “wrap-on” tie to eliminate cutting into the mains wiring. This sensor had a 3.5mm jack socket that was plugged into the analog module. The analog board can communicate with the Raspberry Pi with the GND, power input and signal output connections (these will be used with the male to female wires). 
+
+
 
 <<<<<<< aisling
 UI, Users and Testing
